@@ -26,5 +26,6 @@ ext {
             "converter-gson"   : 'com.squareup.retrofit2:converter-gson:2.2.0',
             // di
             "butterknife"      : 'com.jakewharton:butterknife:8.5.1',
+            "bugtags-lib"      : 'com.bugtags.library:bugtags-lib:latest.integration'
     ]
 }

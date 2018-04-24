@@ -1,4 +1,4 @@
-package com.golike.magicgankclient;
+package com.golike.magicgankclient.ui;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.golike.magicgankclient.R;
+import com.golike.magicgankclient.model.SearchData;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

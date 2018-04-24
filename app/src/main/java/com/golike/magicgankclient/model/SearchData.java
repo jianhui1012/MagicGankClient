@@ -1,4 +1,4 @@
-package com.golike.magicgankclient;
+package com.golike.magicgankclient.model;
 
 import java.util.List;
 
@@ -20,13 +20,13 @@ public class SearchData {
         this.results = results;
     }
 
-    class GANK {
+    public class GANK {
 
         String _id;
 
         String createdAt;
 
-        String desc;
+        public String desc;
 
         private String url;
 

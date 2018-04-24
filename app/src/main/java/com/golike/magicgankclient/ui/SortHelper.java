@@ -1,4 +1,4 @@
-package com.golike.magicgankclient;
+package com.golike.magicgankclient.ui;
 
 /**
  * Created by admin on 2018/2/7.

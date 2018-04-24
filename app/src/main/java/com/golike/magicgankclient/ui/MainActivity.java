@@ -1,20 +1,24 @@
-package com.golike.magicgankclient;
+package com.golike.magicgankclient.ui;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.golike.magicgankclient.R;
+import com.golike.magicgankclient.base.BaseActivity;
+import com.golike.magicgankclient.http.HttpUtils;
+import com.golike.magicgankclient.model.SearchData;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import rx.Subscriber;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private Subscriber<SearchData> subscriber;
 
