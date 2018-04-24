@@ -31,16 +31,29 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.recyclerView)
     public RecyclerView recyclerView;
 
-    private RecyclerView.LayoutManager layoutManager = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
+    private RecyclerView.LayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
     private RecyclerView.Adapter adapter = new NewAdapter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
 //        int[] arrary = {3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48};
 //        getData.setText(SortHelper.getInstance().sort(arrary, Sort.Choose));
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    public void initData() {
+
+    }
+
+    @Override
+    public void initView() {
+
     }
 
     @Override

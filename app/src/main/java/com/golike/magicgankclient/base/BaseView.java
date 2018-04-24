@@ -5,5 +5,8 @@ package com.golike.magicgankclient.base;
  * 邮箱：golikeholdon@gmail.com
  */
 
-public class BaseView {
+interface BaseView {
+
+
+
 }
