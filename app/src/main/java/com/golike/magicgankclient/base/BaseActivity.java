@@ -17,11 +17,11 @@ import butterknife.Unbinder;
  * Created by Administrator on 2018/4/24.
  */
 
-public abstract class BaseActivity extends AppCompatActivity implements BaseView{
+public abstract class BaseActivity<V extends IBaseView, T extends RxPresenter<V>> extends AppCompatActivity implements IBaseView {
 
     protected Context mContext;
     private Unbinder unbinder;
-    private RxPresenter rxPresenter;
+    protected T rxPresenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
         setContentView(getLayoutId());
         transparent19and20();
         rxPresenter=initPresenter();
-        rxPresenter.attach(this);
+        rxPresenter.attach((V)this);
         mContext = this;
         unbinder = ButterKnife.bind(this);
         initData();
@@ -42,7 +42,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
 
     public abstract void initView();
 
-    public abstract RxPresenter initPresenter();
+    public abstract T initPresenter();
 
     protected void transparent19and20() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT

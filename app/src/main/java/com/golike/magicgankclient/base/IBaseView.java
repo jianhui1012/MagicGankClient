@@ -5,7 +5,7 @@ package com.golike.magicgankclient.base;
  * 邮箱：golikeholdon@gmail.com
  */
 
-interface BaseView {
+public interface IBaseView {
 
     void showProgress();
 

@@ -10,11 +10,11 @@ import android.app.Activity;
  * @author djh
  * @since 2018/04/25 09/04
  */
-public class RxPresenter<T extends Activity> implements BasePresenter<T> {
+public class RxPresenter<V extends IBaseView> implements IBasePresenter<V> {
 
-    private T mView;
+    protected V mView;
     @Override
-    public void attach(T view) {
+    public void attach(V view) {
         mView=view;
     }
 

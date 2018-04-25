@@ -5,7 +5,7 @@ package com.golike.magicgankclient.base;
  * 邮箱：golikeholdon@gmail.com
  */
 
-interface BasePresenter<T> {
+public interface IBasePresenter<T> {
 
     void attach(T view);
 

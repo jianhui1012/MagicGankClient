@@ -10,17 +10,34 @@ import android.widget.Toast;
 
 import com.golike.magicgankclient.R;
 import com.golike.magicgankclient.base.BaseActivity;
+import com.golike.magicgankclient.base.RxPresenter;
 import com.golike.magicgankclient.http.HttpUtils;
 import com.golike.magicgankclient.model.SearchData;
+import com.golike.magicgankclient.ui.presenter.MainPresenter;
+import com.golike.magicgankclient.ui.view.IMainView;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import rx.Subscriber;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity<IMainView, MainPresenter> implements IMainView {
 
     private Subscriber<SearchData> subscriber;
+
+    @Override
+    public void showProgress() {
+
+    }
+
+    @Override
+    public void hideProgress() {
+
+    }
+
+    @Override
+    public void login(String name, String pwd) {
+        rxPresenter.loginExecute();
+    }
 
     enum Sort {
         Pop, Choose
@@ -39,6 +56,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 //        int[] arrary = {3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48};
 //        getData.setText(SortHelper.getInstance().sort(arrary, Sort.Choose));
+
     }
 
     @Override
@@ -54,6 +72,11 @@ public class MainActivity extends BaseActivity {
     @Override
     public void initView() {
 
+    }
+
+    @Override
+    public MainPresenter initPresenter() {
+        return new MainPresenter();
     }
 
     @Override
