@@ -7,6 +7,7 @@ package com.golike.magicgankclient.base;
 
 interface BaseView {
 
+    void showProgress();
 
-
+    void hideProgress();
 }

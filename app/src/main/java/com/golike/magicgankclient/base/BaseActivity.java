@@ -1,6 +1,5 @@
 package com.golike.magicgankclient.base;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,12 +21,15 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
 
     protected Context mContext;
     private Unbinder unbinder;
+    private RxPresenter rxPresenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         transparent19and20();
+        rxPresenter=initPresenter();
+        rxPresenter.attach(this);
         mContext = this;
         unbinder = ButterKnife.bind(this);
         initData();
@@ -39,6 +41,8 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     public abstract void initData();
 
     public abstract void initView();
+
+    public abstract RxPresenter initPresenter();
 
     protected void transparent19and20() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT
