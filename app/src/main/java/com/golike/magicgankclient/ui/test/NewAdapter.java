@@ -1,4 +1,4 @@
-package com.golike.magicgankclient.ui;
+package com.golike.magicgankclient.ui.test;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

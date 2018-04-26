@@ -1,4 +1,4 @@
-package com.golike.magicgankclient.ui;
+package com.golike.magicgankclient.ui.test;
 
 /**
  * Created by admin on 2018/2/7.
@@ -17,7 +17,7 @@ public class SortHelper {
         return SingleInstance.sortHelper;
     }
 
-    String sort(int[] arrary, MainActivity.Sort type) {
+    String sort(int[] arrary, MainActivity2.Sort type) {
         switch (type) {
             case Pop:
                 arrary = PopSort(arrary);

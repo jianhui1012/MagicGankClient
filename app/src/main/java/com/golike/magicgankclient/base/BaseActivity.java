@@ -5,10 +5,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
 import android.view.WindowManager;
 
 import com.bugtags.library.Bugtags;
+import com.golike.magicgankclient.R;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -20,21 +22,30 @@ import butterknife.Unbinder;
 public abstract class BaseActivity<V extends IBaseView, T extends RxPresenter<V>> extends AppCompatActivity implements IBaseView {
 
     protected Context mContext;
+    protected T basePresenter;
     private Unbinder unbinder;
-    protected T rxPresenter;
+
+    protected Toolbar mCommonToolbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         transparent19and20();
-        rxPresenter=initPresenter();
-        rxPresenter.attach((V)this);
+        basePresenter = initPresenter();
+        basePresenter.attach((V) this);
         mContext = this;
         unbinder = ButterKnife.bind(this);
+        mCommonToolbar = ButterKnife.findById(this, R.id.common_toolbar);
+        if (mCommonToolbar != null) {
+            initToolBar();
+            setSupportActionBar(mCommonToolbar);
+        }
         initData();
         initView();
     }
+
+    public abstract void initToolBar();
 
     public abstract int getLayoutId();
 
@@ -55,8 +66,9 @@ public abstract class BaseActivity<V extends IBaseView, T extends RxPresenter<V>
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (unbinder != null)
+        if (unbinder != null) {
             unbinder.unbind();
+        }
     }
 
     @Override
@@ -78,5 +90,15 @@ public abstract class BaseActivity<V extends IBaseView, T extends RxPresenter<V>
         //注：回调 3
         Bugtags.onDispatchTouchEvent(this, event);
         return super.dispatchTouchEvent(event);
+    }
+
+    @Override
+    public void showProgress() {
+
+    }
+
+    @Override
+    public void hideProgress() {
+
     }
 }
