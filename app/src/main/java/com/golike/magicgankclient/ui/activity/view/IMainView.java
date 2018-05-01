@@ -1,4 +1,4 @@
-package com.golike.magicgankclient.ui.view;
+package com.golike.magicgankclient.ui.activity.view;
 
 import com.golike.magicgankclient.base.IBaseView;
 

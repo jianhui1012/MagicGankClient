@@ -1,5 +1,6 @@
 package com.golike.magicgankclient.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -72,10 +73,6 @@ public class SearchData {
             this.url = url;
         }
 
-        public List<String> getImages() {
-            return images;
-        }
-
         public void setImages(List<String> images) {
             this.images = images;
         }
@@ -86,6 +83,14 @@ public class SearchData {
 
         public void setPublishedAt(String publishedAt) {
             this.publishedAt = publishedAt;
+        }
+
+
+        public List<String> getImages() {
+            if (images == null) {
+                return new ArrayList<>();
+            }
+            return images;
         }
     }
 

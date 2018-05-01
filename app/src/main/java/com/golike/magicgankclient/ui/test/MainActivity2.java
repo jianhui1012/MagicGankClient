@@ -12,8 +12,8 @@ import com.golike.magicgankclient.R;
 import com.golike.magicgankclient.base.BaseActivity;
 import com.golike.magicgankclient.http.HttpUtils;
 import com.golike.magicgankclient.model.SearchData;
-import com.golike.magicgankclient.ui.presenter.MainPresenter;
-import com.golike.magicgankclient.ui.view.IMainView;
+import com.golike.magicgankclient.ui.activity.presenter.MainPresenter;
+import com.golike.magicgankclient.ui.activity.view.IMainView;
 
 import butterknife.BindView;
 import butterknife.OnClick;
