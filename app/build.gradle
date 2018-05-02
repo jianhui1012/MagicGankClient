@@ -45,7 +45,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //test
     compile rootProject.ext.dependencies["junit"]
-    compile 'com.readystatesoftware.systembartint:systembartint:1.0.4'
+    compile rootProject.ext.dependencies["systembartint"]
     //ui
     compile rootProject.ext.dependencies["appcompat-v7"]
     compile rootProject.ext.dependencies["constraint-layout"]
@@ -65,7 +65,11 @@ dependencies {
     //bugtags
     compile rootProject.ext.dependencies["bugtags-lib"]
     //listview
-    compile 'com.jude:easyrecyclerview:4.4.2'
+    compile rootProject.ext.dependencies["easyrecyclerview"]
+    //logger
+    implementation rootProject.ext.dependencies["logger"]
+    //rollviewpager
+    compile rootProject.ext.dependencies["rollviewpager"]
     //qmui
     //compile rootProject.ext.dependencies["qmui"]
 }

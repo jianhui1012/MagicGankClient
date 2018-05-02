@@ -10,24 +10,32 @@ ext {
 
     dependencies = [
             //test
-            "junit"            : 'junit:junit:4.12',
+            "junit"               : 'junit:junit:4.12',
+            //
+            "systembartint"       : 'com.readystatesoftware.systembartint:systembartint:1.0.4',
             // ui
-            "appcompat-v7"     : "com.android.support:appcompat-v7:26.1.0",
-            "constraint-layout": 'com.android.support.constraint:constraint-layout:1.1.0',
-            "design"           : "com.android.support:design:26.1.0",
-            "cardview-v7"      : "com.android.support:cardview-v7:26.1.0",
-            "recyclerview-v7"  : 'com.android.support:recyclerview-v7:26.1.0',
+            "appcompat-v7"        : "com.android.support:appcompat-v7:26.1.0",
+            "constraint-layout"   : 'com.android.support.constraint:constraint-layout:1.1.0',
+            "design"              : "com.android.support:design:26.1.0",
+            "cardview-v7"         : "com.android.support:cardview-v7:26.1.0",
+            "recyclerview-v7"     : 'com.android.support:recyclerview-v7:26.1.0',
             // rx
-            "rxjava"           : 'com.squareup.retrofit2:adapter-rxjava:2.2.0',
-            "rxandroid"        : 'io.reactivex:rxandroid:1.2.1',
+            "rxjava"              : 'com.squareup.retrofit2:adapter-rxjava:2.2.0',
+            "rxandroid"           : 'io.reactivex:rxandroid:1.2.1',
             // network and image
-            "retrofit"         : 'com.squareup.retrofit2:retrofit:2.2.0',
-            "glide"            : 'com.github.bumptech.glide:glide:3.7.0',
-            "converter-gson"   : 'com.squareup.retrofit2:converter-gson:2.2.0',
+            "retrofit"            : 'com.squareup.retrofit2:retrofit:2.2.0',
+            "glide"               : 'com.github.bumptech.glide:glide:3.7.0',
+            "converter-gson"      : 'com.squareup.retrofit2:converter-gson:2.2.0',
             // di
-            "butterknife"      : 'com.jakewharton:butterknife:8.5.1',
-            "butterknife-compiler"   : 'com.jakewharton:butterknife-compiler:8.5.1',
-            "bugtags-lib"      : 'com.bugtags.library:bugtags-lib:latest.integration',
-            "qmui"             : 'com.qmuiteam:qmui:1.0.6'
+            "butterknife"         : 'com.jakewharton:butterknife:8.5.1',
+            "butterknife-compiler": 'com.jakewharton:butterknife-compiler:8.5.1',
+            //bugtags
+            "bugtags-lib"         : 'com.bugtags.library:bugtags-lib:latest.integration',
+            "easyrecyclerview"    : 'com.jude:easyrecyclerview:4.4.2',
+            //logger
+            "logger"              : 'com.orhanobut:logger:2.2.0',
+            //rollviewpager
+            "rollviewpager"       : 'com.jude:rollviewpager:1.2.9',
+            "qmui"                : 'com.qmuiteam:qmui:1.0.6'
     ]
 }

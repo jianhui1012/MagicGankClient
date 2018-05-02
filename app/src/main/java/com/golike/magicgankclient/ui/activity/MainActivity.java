@@ -31,7 +31,7 @@ public class MainActivity extends BaseActivity<IMainView, MainPresenter> impleme
     @BindView(R.id.viewPager)
     ViewPager mViewPager;
 
-    @BindView(R.id.recommendTabLayout)
+    @BindView(R.id.mainTabLayout)
     TabLayout mTabLayout;
 
     List<Fragment> mFragments;

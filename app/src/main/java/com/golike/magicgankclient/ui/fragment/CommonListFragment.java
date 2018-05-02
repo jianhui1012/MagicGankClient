@@ -4,13 +4,11 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
 import com.golike.magicgankclient.R;
 import com.golike.magicgankclient.base.BaseFragment;
 import com.golike.magicgankclient.model.SearchData;
-import com.golike.magicgankclient.ui.fragment.adapter.WelfAreAdapter;
 import com.golike.magicgankclient.ui.fragment.adapter.viewholder.CommonListHolder;
 import com.golike.magicgankclient.ui.fragment.presenter.CommonListPresenter;
 import com.golike.magicgankclient.ui.fragment.view.ICommonListView;
