@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.golike.magicgankclient.R;
 import com.golike.magicgankclient.model.SearchData;
+import com.golike.magicgankclient.utils.TimeUtil;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 
 public class CommonListHolder extends BaseViewHolder<SearchData.GANK> {
@@ -33,7 +34,7 @@ public class CommonListHolder extends BaseViewHolder<SearchData.GANK> {
 
         gank_desc.setText(gank.desc);
         gank_name.setText(gank.getWho());
-        gank_date.setText(gank.getPublishedAt());
+        gank_date.setText(TimeUtil.getTranslateTime(gank.getPublishedAt()));
         if (gank.getImages().size() > 0) {
             Glide.with(getContext())
                     .load(gank.getImages().get(0))

@@ -1,6 +1,8 @@
 package com.golike.magicgankclient.ui.fragment;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -86,12 +88,14 @@ public class CommonListFragment extends BaseFragment<ICommonListView, CommonList
             recyclerView.setAdapterWithProgress(adapter);
             adapter.setMore(R.layout.view_more, this);
             adapter.setNoMore(R.layout.view_nomore);
-            adapter.setOnItemLongClickListener(new RecyclerArrayAdapter.OnItemLongClickListener() {
-                @Override
-                public boolean onItemLongClick(int position) {
-                    adapter.remove(position);
-                    return true;
-                }
+            adapter.setOnItemLongClickListener((position)->{
+                adapter.remove(position);
+                return true;
+                });
+            adapter.setOnItemClickListener(position -> {
+                adapter.getItem(position);
+                CommonListFragment.this.getActivity().
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(adapter.getItem(position).getUrl())));
             });
             recyclerView.setRefreshListener(this::onRefresh);
             adapter.clear();

@@ -2,20 +2,23 @@ package com.golike.magicgankclient.ui.activity;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.view.View;
 
 import com.golike.magicgankclient.R;
 import com.golike.magicgankclient.base.BaseActivity;
+import com.golike.magicgankclient.ui.activity.presenter.MainPresenter;
+import com.golike.magicgankclient.ui.activity.view.IMainView;
 import com.golike.magicgankclient.ui.adapter.ViewPagerFragmentAdapter;
 import com.golike.magicgankclient.ui.fragment.CommonListFragment;
 import com.golike.magicgankclient.ui.fragment.RecommendByDayFragment;
 import com.golike.magicgankclient.ui.fragment.WelfAreFragment;
-import com.golike.magicgankclient.ui.activity.presenter.MainPresenter;
-import com.golike.magicgankclient.ui.activity.view.IMainView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +36,12 @@ public class MainActivity extends BaseActivity<IMainView, MainPresenter> impleme
 
     @BindView(R.id.mainTabLayout)
     TabLayout mTabLayout;
+
+    @BindView(R.id.drawerLayout)
+    DrawerLayout drawerLayout;
+
+    @BindView(R.id.nav_view)
+    NavigationView navigationView;
 
     List<Fragment> mFragments;
     FragmentManager mFragmentManager;
@@ -88,8 +97,11 @@ public class MainActivity extends BaseActivity<IMainView, MainPresenter> impleme
 
     @Override
     public void initToolBar() {
-        mCommonToolbar.setNavigationIcon(R.mipmap.ic_launcher_round);
-        mCommonToolbar.setTitle(R.string.app_name);
+        //mCommonToolbar.setNavigationIcon(R.mipmap.ic_launcher_round);
+        mCommonToolbar.setTitle("");
+        mCommonToolbar.findViewById(R.id.nav_bar_menu).setOnClickListener((v)->{
+            drawerLayout.openDrawer(GravityCompat.START);
+        });
         //mCommonToolbar.setTitleTextColor(getResources().getColor(Theme.);
     }
 
@@ -105,7 +117,7 @@ public class MainActivity extends BaseActivity<IMainView, MainPresenter> impleme
 
     @Override
     public void initView() {
-
+        navigationView.inflateHeaderView(R.layout.nav_header_main);
     }
 
     @Override

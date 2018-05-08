@@ -2,7 +2,6 @@ package com.golike.magicgankclient.ui.fragment;
 
 import android.graphics.Color;
 import android.support.design.widget.TabLayout;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,18 +62,11 @@ public class RecommendByDayFragment extends BaseFragment<IRecommendByDayView, Re
             itemDecoration.setDrawLastItem(true);
             itemDecoration.setDrawHeaderFooter(true);
             recyclerView.addItemDecoration(itemDecoration);
-            recyclerView.setRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-                @Override
-                public void onRefresh() {
-                    recyclerView.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            adapter.clear();
-                            adapter.addAll(new ArrayList<>());
-                        }
-                    }, 1500);
-                }
-            });
+            recyclerView.setRefreshListener(()->{
+                recyclerView.postDelayed(()->{
+                    adapter.clear();
+                    adapter.addAll(new ArrayList<>());
+                }, 1500);});
             adapter.addHeader(new RecyclerArrayAdapter.ItemView() {
                 @Override
                 public View onCreateView(ViewGroup parent) {
@@ -95,7 +87,6 @@ public class RecommendByDayFragment extends BaseFragment<IRecommendByDayView, Re
 
                 @Override
                 public void onBindView(View headerView) {
-
                 }
             });
             adapter.addAll(new ArrayList<>());

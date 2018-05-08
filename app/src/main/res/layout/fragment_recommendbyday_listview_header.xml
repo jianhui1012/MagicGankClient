@@ -13,6 +13,9 @@
     <!--tab按钮组-->
     <android.support.design.widget.TabLayout
         android:id="@+id/recommendTabLayout"
+        app:tabPaddingStart="-1dp"
+        app:tabPaddingEnd="-1dp"
+        app:tabGravity="fill"
         android:layout_width="match_parent"
         app:tabIndicatorColor="@android:color/transparent"
         android:layout_height="wrap_content" />
